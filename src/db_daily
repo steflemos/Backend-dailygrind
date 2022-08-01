@@ -1,0 +1,24 @@
+create table usuario (
+    idUsuario SERIAL,
+    apelido varchar(100),
+    email varchar(255),
+    senha varchar(100),
+    pontos_recompensa int,
+    primary key (idUsuario)
+);
+create table tarefa (
+    idTarefa serial,
+    descricao varchar(100),
+    pontos_recompensa int,
+    idUsuario int,
+    foreign key (idUsuario) references usuario(idUsuario),
+    primary key (idTarefa)
+);
+
+CREATE TABLE conquista(
+    idConquista SERIAL,
+    imagem INT,
+    pontos_necessarios INT,
+    primary key(idConquista)
+);
+
